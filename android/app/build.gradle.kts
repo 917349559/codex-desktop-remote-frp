@@ -23,6 +23,12 @@ android {
         buildConfig = true
     }
 
+    buildTypes {
+        debug {
+            applicationIdSuffix = ".frp"
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

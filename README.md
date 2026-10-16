@@ -1,4 +1,13 @@
-# Codex Desktop Remote for Android
+﻿# Codex Desktop Remote for Android
+
+> **本仓库是 `917349559` 维护的 FRP 定制版。**
+>
+> 它用于在 Android 手机上查看、审批和控制 Windows 上的 Codex Desktop 任务。当前版本在原有局域网/Tailscale 支持之外，额外允许通过指定的 HTTPS FRP 地址 `https://frp-sea.com:29641` 连接，并内置了该地址当前使用的自签名证书信任锚。
+>
+> - [下载最新 Android APK](https://github.com/917349559/codex-desktop-remote-frp/releases/latest)
+> - [查看 FRP 定制说明与构建方法](docs/FRP_BUILD.zh-CN.md)
+> - 上游项目：[melompeel/codex-desktop-remote](https://github.com/melompeel/codex-desktop-remote)
+> - 本项目与 OpenAI 无官方关联。
 
 这是一个适用于 Windows ChatGPT/Codex Desktop 的 Android 远程控制器。
 

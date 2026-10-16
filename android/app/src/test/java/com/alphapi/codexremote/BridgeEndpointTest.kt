@@ -54,6 +54,23 @@ class BridgeEndpointTest {
     }
 
     @Test
+    fun acceptsOnlyTheAllowlistedFrpEndpointOverHttps() {
+        assertEquals(
+            "https://frp-sea.com:29641",
+            BridgeEndpoint.normalize(" https://frp-sea.com:29641/ "),
+        )
+        assertThrows(IllegalArgumentException::class.java) {
+            BridgeEndpoint.normalize("http://frp-sea.com:29641")
+        }
+        assertThrows(IllegalArgumentException::class.java) {
+            BridgeEndpoint.normalize("https://frp-sea.com:29642")
+        }
+        assertThrows(IllegalArgumentException::class.java) {
+            BridgeEndpoint.normalize("https://frp-sea.com.evil.example:29641")
+        }
+    }
+
+    @Test
     fun rejectsPublicHostsAndUnexpectedPaths() {
         assertThrows(IllegalArgumentException::class.java) {
             BridgeEndpoint.normalize("http://8.8.8.8:8766")

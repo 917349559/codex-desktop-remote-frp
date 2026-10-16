@@ -3,6 +3,10 @@ package com.alphapi.codexremote
 import java.net.URI
 
 object BridgeEndpoint {
+    private val allowedPublicEndpoints = setOf(
+        "frp-sea.com:29641",
+    )
+
     fun normalize(value: String): String {
         val trimmed = value.trim()
         val candidate = if ("://" in trimmed) trimmed else "http://$trimmed"
@@ -18,7 +22,12 @@ object BridgeEndpoint {
             "bridge-address-must-not-have-path"
         }
         val host = uri.host ?: throw IllegalArgumentException("bridge-host-required")
-        require(isTrustedBridgeHost(host)) { "bridge-host-must-be-private-lan-or-tailscale" }
+        val publicEndpoint = "${host.lowercase()}:${uri.port}"
+        if (publicEndpoint in allowedPublicEndpoints) {
+            require(uri.scheme == "https") { "bridge-public-host-requires-https" }
+        } else {
+            require(isTrustedBridgeHost(host)) { "bridge-host-must-be-private-lan-or-tailscale" }
+        }
         require(uri.port == -1 || uri.port in 1..65_535) { "bridge-port-invalid" }
         return candidate.trimEnd('/')
     }

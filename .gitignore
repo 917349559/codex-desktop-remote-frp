@@ -1,4 +1,4 @@
-# Windows and IDE files
+﻿# Windows and IDE files
 .DS_Store
 Thumbs.db
 .idea/
@@ -43,3 +43,6 @@ Thumbs.db
 *.zip
 *.7z
 *.rar
+
+# Local release staging
+/release/

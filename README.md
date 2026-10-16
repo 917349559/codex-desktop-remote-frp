@@ -8,6 +8,8 @@
 > - [查看 FRP 定制说明与构建方法](docs/FRP_BUILD.zh-CN.md)
 > - 上游项目：[melompeel/codex-desktop-remote](https://github.com/melompeel/codex-desktop-remote)
 > - 本项目与 OpenAI 无官方关联。
+>
+> 注：下面出现的 Tailscale 和 `8766` 是上游默认说明；本定制版实际使用的公网入口是 `https://frp-sea.com:29641`。
 
 这是一个适用于 Windows ChatGPT/Codex Desktop 的 Android 远程控制器。
 
@@ -35,12 +37,12 @@
 
 - Windows 11
 - 已安装并登录 Codex Desktop
-- Tailscale（远程使用时需要）
+- Tailscale 或本定制版支持的 HTTPS FRP（远程使用时二选一）
 
 手机需要：
 
 - Android 8.0 或更新版本
-- 与电脑登录同一个 Tailscale 账号或 tailnet
+- 与电脑登录同一个 Tailscale 账号或 tailnet，或使用本定制版放行的 HTTPS FRP
 
 ## 二、启动电脑端
 
@@ -163,7 +165,7 @@ Android 如果提示“禁止安装未知应用”，请临时允许当前文件
 
 - 只在可信局域网或同一 Tailscale tailnet 中使用。
 - 不要把 `8766` 端口映射到公网。
-- 普通公网 IP 和域名会被 Android 客户端拒绝。
+- 除本定制版明确放行的 `https://frp-sea.com:29641` 外，其他公网 IP 和域名会被 Android 客户端拒绝。
 - 每台手机使用独立令牌，请不要复制 Bridge 的设备数据目录。
 - 涉及密码等秘密输入时，请回到电脑端处理。
 

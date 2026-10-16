@@ -10,6 +10,7 @@ class AppUpdaterTest {
     fun normalizesReleaseTags() {
         assertEquals("0.4.0", normalizeVersion("v0.4.0"))
         assertEquals("2.1", normalizeVersion("2.1"))
+        assertEquals("0.6.2", normalizeVersion("v0.6.2-frp.1"))
         assertNull(normalizeVersion("release-next"))
     }
 
@@ -32,8 +33,8 @@ class AppUpdaterTest {
 
     @Test
     fun createsStableApkFileNames() {
-        assertEquals("codex-desktop-remote-0.4.2.apk", updateApkFileName("v0.4.2"))
-        assertEquals("codex-desktop-remote-update.apk", updateApkFileName("preview"))
+        assertEquals("codex-desktop-remote-frp-0.4.2.apk", updateApkFileName("v0.4.2"))
+        assertEquals("codex-desktop-remote-frp-update.apk", updateApkFileName("preview"))
     }
 
     @Test

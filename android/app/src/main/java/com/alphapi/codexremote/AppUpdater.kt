@@ -18,7 +18,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 
 private const val LATEST_RELEASE_URL =
-    "https://api.github.com/repos/melompeel/codex-desktop-remote/releases/latest"
+    "https://api.github.com/repos/917349559/codex-desktop-remote-frp/releases/latest"
 private const val UPDATE_PREFERENCES = "app_update_download"
 private const val UPDATE_CHANNEL = "app_updates"
 private const val UPDATE_NOTIFICATION_ID = 4202
@@ -52,7 +52,7 @@ internal fun classifyDownloadStatus(status: Int?): DownloadStatus = when (status
 }
 
 internal fun updateApkFileName(version: String): String =
-    "codex-desktop-remote-${normalizeVersion(version) ?: "update"}.apk"
+    "codex-desktop-remote-frp-${normalizeVersion(version) ?: "update"}.apk"
 
 internal fun resolveCheckedUpdateState(
     currentVersion: String,
@@ -251,7 +251,7 @@ private data class StoredDownload(val downloadId: Long, val update: AppUpdate)
 
 internal fun normalizeVersion(value: String): String? {
     val normalized = value.trim().removePrefix("v").removePrefix("V")
-    return normalized.takeIf { it.matches(Regex("\\d+(?:\\.\\d+){1,3}")) }
+    return Regex("^(\\d+(?:\\.\\d+){1,3})(?:-frp\\.\\d+)?$").matchEntire(normalized)?.groupValues?.get(1)
 }
 
 internal fun compareVersions(left: String, right: String): Int {

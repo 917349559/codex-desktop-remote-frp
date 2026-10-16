@@ -1,4 +1,4 @@
-﻿# Codex Desktop Remote for Android
+# Codex Desktop Remote for Android
 
 > **本仓库是 `917349559` 维护的 FRP 定制版。**
 >

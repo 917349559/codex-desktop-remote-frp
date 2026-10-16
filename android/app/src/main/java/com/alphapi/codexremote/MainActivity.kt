@@ -469,7 +469,7 @@ private fun RemoteHome(
             onOpenSource = {
                 runCatching {
                     context.startActivity(
-                        Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/melompeel/codex-desktop-remote")),
+                        Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/917349559/codex-desktop-remote-frp")),
                     )
                 }.onFailure {
                     Toast.makeText(context, "没有找到可用的浏览器", Toast.LENGTH_SHORT).show()
@@ -646,7 +646,7 @@ internal fun AboutDialog(
                     Column(Modifier.weight(1f)) {
                         Text("开源项目")
                         Text(
-                            "github.com/melompeel/codex-desktop-remote",
+                            "github.com/917349559/codex-desktop-remote-frp",
                             style = MaterialTheme.typography.labelSmall,
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,

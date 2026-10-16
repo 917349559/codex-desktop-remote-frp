@@ -1,4 +1,4 @@
-﻿# FRP 定制版说明
+# FRP 定制版说明
 
 ## 这个项目是做什么的
 
@@ -62,7 +62,7 @@ APK 不提交到 Git 源码历史，而是作为 Release 资产发布。
 当前本地构建产物：
 
 ```text
-release/frp/CodexRemote-Android-v0.6.1-frp-debug.apk
+release/frp/CodexRemote-Android-v0.6.2-frp.1-debug.apk
 ```
 
 校验文件：
@@ -74,7 +74,7 @@ release/frp/SHA256SUMS.txt
 当前 APK SHA-256：
 
 ```text
-26B393ABFA19B733EA7735A8757B5115454FF4CC4D9D711DC3387DF27249D85C
+BED6BEC4E8C6BF45BCC04F900D82C498842E8C7D7FD8CA669537E65911829404
 ```
 
 ## 手机端连接
@@ -90,6 +90,8 @@ release/frp/SHA256SUMS.txt
    ```
 
 4. 输入 Bridge 当前显示的六位临时配对码。
+- 应用内“检查更新”已指向本仓库的 `v0.6.2-frp.1` Release。
+
 
 5. 配对完成后，手机令牌会使用 Android Keystore 加密保存。
 
